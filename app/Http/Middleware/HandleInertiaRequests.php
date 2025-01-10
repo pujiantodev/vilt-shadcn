@@ -32,8 +32,12 @@ class HandleInertiaRequests extends Middleware
         return [
             ...parent::share($request),
             'auth' => [
-                'user' => $request->user(),
+                'user' => $request->user() ?
+                    // agar data user tidak semua diambil pada setiap request
+                    $request->user()->only('id', 'name', 'email', 'roles')
+                    : null,
             ],
+            'appName' => config('app.name'),
         ];
     }
 }
