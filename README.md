@@ -1,7 +1,8 @@
 ## VILT + Shadcn/vue
 
 author : [pujiantodev](https://github.com/pujiantodev)
-template project laravel dari tumpukan teknologi terpopuler ditahun ini:
+
+Template project laravel dari tumpukan teknologi terpopuler ditahun ini:
 
 - VILT
     - Vue
@@ -21,7 +22,6 @@ template project laravel dari tumpukan teknologi terpopuler ditahun ini:
 
 ## Reference
 
-- https://ui.shadcn.com/
 - https://shadcn-vue.com/
 - https://inertiajs.com/
 - https://tailwindcss.com/
