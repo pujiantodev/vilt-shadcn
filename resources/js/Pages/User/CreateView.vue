@@ -23,7 +23,7 @@ import { Head, router } from "@inertiajs/vue3";
 defineProps({
     errors: Object,
 });
-const newEmployee = reactive({
+const newUser = reactive({
     name: "",
     email: "",
     phone: "",
@@ -33,7 +33,7 @@ const newEmployee = reactive({
 const isLoading = ref(false);
 const submit = () => {
     isLoading.value = true;
-    router.post(route("users.store"), newEmployee, {
+    router.post(route("users.store"), newUser, {
         onSuccess: () => {
             isLoading.value = false;
         },
@@ -53,7 +53,7 @@ const submit = () => {
                         <div>
                             <Label for="name" class="required"> Nama </Label>
                             <Input
-                                v-model:model-value="newEmployee.name"
+                                v-model:model-value="newUser.name"
                                 type="text"
                                 name="name"
                                 id="name"
@@ -69,7 +69,7 @@ const submit = () => {
                         <div>
                             <Label class="required" for="email">Email</Label>
                             <Input
-                                v-model:model-value="newEmployee.email"
+                                v-model:model-value="newUser.email"
                                 type="email"
                                 name="email"
                                 id="email"
@@ -87,7 +87,7 @@ const submit = () => {
                                 >HP / WhatsApp</Label
                             >
                             <Input
-                                v-model:model-value="newEmployee.phone"
+                                v-model:model-value="newUser.phone"
                                 type="tel"
                                 name="phone"
                                 id="phone"
@@ -101,7 +101,7 @@ const submit = () => {
                         </div>
                         <div>
                             <Label for="gender" class="required">Gender</Label>
-                            <Select v-model="newEmployee.gender">
+                            <Select v-model="newUser.gender">
                                 <SelectTrigger id="gender">
                                     <SelectValue
                                         placeholder="Pilih Jenis Kelamin"
@@ -128,7 +128,7 @@ const submit = () => {
                         <div class="sm:col-span-2">
                             <Label for="address">Alamat</Label>
                             <Textarea
-                                v-model:model-value="newEmployee.address"
+                                v-model:model-value="newUser.address"
                                 id="address"
                                 name="address"
                                 rows="4"
@@ -136,7 +136,7 @@ const submit = () => {
                             />
                         </div>
                     </div>
-                    <Button type="submit"><Plus />Simpan Karyawan Baru</Button>
+                    <Button type="submit"><Plus />Simpan User Baru</Button>
                 </form>
             </CardContent>
         </Card>
